@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const MINTER_NODE = "http://localhost:8841";
+const MINTER_NODE = process.env.MINTER_API_URL || "http://localhost:8841";
 
 async function get(endpoint) {
     const url = `${MINTER_NODE}/${endpoint}`;

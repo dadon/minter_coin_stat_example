@@ -3,7 +3,7 @@ const { processNewBlocks } = require("./parse_block");
 
 const mode = process.argv[2];
 
-const coin = "TIME";
+const coin = process.env.COIN || "TIME";
 
 if (mode === Periods.Daily) {
     printStat(coin, Periods.Daily);
