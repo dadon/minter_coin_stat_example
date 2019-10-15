@@ -50,6 +50,10 @@ async function processTransactions(height, transactions, coin) {
 }
 
 function processTransaction(height, transaction, coin) {
+    if ((transaction.code !== undefined && transaction.code > 0) || transaction.log) {
+        return null;
+    }
+
     const hash = transaction.hash;
 
     const transactionData = {
